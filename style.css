@@ -1,0 +1,27 @@
+body{
+  text-align: center;
+}
+img{
+  height: 125px;
+  width: 125px;
+}
+#mirror {
+  transform: scaleX(-1);
+}
+table{
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+}
+td{
+  padding: 10px;
+}
+button{
+  border-radius: 25px;
+  padding: 10px;
+  margin-left: 25px;
+  background-color: white;
+}
+button:hover{
+  background-color: #008CBA;
+}
