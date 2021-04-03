@@ -1,52 +1,60 @@
-let userChosen
-let computerChosen
+$(".player").click(function(){
 
-const displayResult = document.getElementById('results')
-const userChoice = document.getElementById('user-choice')
+  // generate random choice for computer
+  generatedRandomComputerChoice();
 
-var result = results()
+  // display image for computer choice
+  $(".computerImage").attr("src", "images/" + compChoice + ".png");
 
-const possibleChoices = document.querySelectorAll('.choices')
-const computerChoice = document.getElementById('computer-choice')
+  // alert window to display choices (turn off - for debug only)
+  //alert(this.id);
+  //alert(compChoice);
 
-// get userChosen
-possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
-    userChosen = e.target.id 
-    generatedRandCompChoice()
-    results() 
-    userChoice.innerHTML = userChosen
-    computerChoice.innerHTML = computerChosen
-    displayResult.innerHTML = result
-}))
+  // assign image to player choice (LONG WAY)
+  // LONG WAY
+  // if((this.id) == "rock"){
+  //   $(".playerImage").attr("src", "images/rock.png");
+  // } else if ((this.id) == "paper"){
+  //   $(".playerImage").attr("src", "images/paper.png");
+  // } else if((this.id) == "scissor"){
+  //   $(".playerImage").attr("src", "images/scissor.png");
+  // }
 
-//get a random computer choice
-function generatedRandCompChoice(){
-    const randomNumber = Math.round(Math.random() * (3))
+  // assign image to player choice (SHORT WAY)
+  $(".playerImage").attr("src", "images/"+(this.id)+".png");
 
-    if (randomNumber === 1 ){
-        return computerChosen = 'rock'
-    }else if(randomNumber === 2){
-        return computerChosen = 'paper'
-    }else if(randomNumber === 3){
-        return computerChosen = 'scissors'
-    }
-}
+  // save player choice to variable (not needed - for code visual)
+  var playerChoice = this.id;
 
-//get results
-function results (){
-    if(userChosen === computerChosen) {
-        return result = "tie." 
-    } else if(computerChosen === 'rock' && userChosen === 'paper'){
-        return result = "you win."
-    } else if(computerChosen === 'paper' && userChosen === 'rock'){
-        return result = "you lose."
-    } else if(computerChosen === 'rock' && userChosen === 'scissors'){
-        return result = "you lose."
-    } else if(computerChosen === 'scissors' && userChosen === 'rock'){
-        return result = "you win."
-    } else if(computerChosen === 'paper' && userChosen === 'scissors'){
-        return result = "you win."
-    } else if(computerChosen === 'scissors' && userChosen === 'paper'){
-        return result = "you lose."
-    }
+  if(compChoice === playerChoice){
+    $("#gameResult").text("It is a tie...");
+  } else if (compChoice == "rock" && playerChoice == 'paper') {
+    $("h2").text("You win!");
+  } else if (compChoice == 'rock' && playerChoice == 'scissor') {
+    $("h2").text("Computer wins!");
+  } else if (compChoice == 'paper' && playerChoice == 'rock') {
+    $("h2").text("Computer wins!");
+  } else if (compChoice == 'paper' && playerChoice == 'scissor') {
+    $("h2").text("You win!");
+  } else if (compChoice == 'scissor' && playerChoice == 'rock') {
+    $("h2").text("You win!");
+  } else if (compChoice == 'scissor' && playerChoice == 'paper') {
+    $("h2").text("Computer wins!");
+  }
+
+})
+
+// ----- get random choice for computer -----
+function generatedRandomComputerChoice() {
+
+  var randomNumber = Math.floor(Math.random() * (3));
+
+  if (randomNumber === 0){
+    return compChoice = 'rock';
+  } else if (randomNumber === 1){
+    return compChoice = 'paper';
+  } else if (randomNumber === 2){
+    return compChoice = 'scissor';
+  }
+  
 }
