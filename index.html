@@ -8,7 +8,10 @@
   </head>
 
   <body>
-    <h1>Rock Paper Scissor!</h1>
+    <h1>Rock Paper Scissors!
+      <button class="resetButton">RESET</button>
+    </h1>
+
     <table>
       <tr>
         <td>
@@ -19,15 +22,31 @@
           <img class="computerImage" id="mirror" src="images/start.png" alt="">
           <h3>Computer</h3>
         </td>
+        <td class="scoreBoard">
+          <h4>SCORE BOARD</h4>
+          <b>Computer Score</b>
+          <div id="computerScore">
+            0
+          </div>
+          <b>Player Score: </b>
+          <div id="playerScore">
+            0
+          </div>
+          <b>Tie Score:</b>
+          <div id="tieScore">
+            0
+          </div>
+        </td>
       </tr>
     </table>
 
+    <hr>
     <h2 id="gameResult">Are you ready?</h2>
+    <hr>
     <h3>Select your choice:</h3>
-    <button class= "player" id="rock"><img src="images/rock.png"></button>
-    <button class= "player" id="paper"><img src="images/paper.png"></button>
-    <button class= "player" id="scissor"><img src="images/scissor.png"></button>
-
+    <button class="player" id="rock"><img src="images/rock.png"></button>
+    <button class="player" id="paper"><img src="images/paper.png"></button>
+    <button class="player" id="scissor"><img src="images/scissor.png"></button>
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

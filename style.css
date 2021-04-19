@@ -6,6 +6,9 @@ h1{
 body{
   text-align: center;
 }
+h4{
+  text-decoration: underline;
+}
 img{
   height: 125px;
   width: 125px;
@@ -29,4 +32,14 @@ button{
 }
 button:hover{
   background-color: #008CBA;
+}
+button.resetButton{
+  background-color: white;
+	border-radius: 100px; 
+	padding: 10px 20px;
+  position: absolute;
+}
+td.scoreBoard{
+  border-left:1px solid #000;
+  height:200px;
 }
